@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="../css/loading.css">
+    <link rel="stylesheet" href="../css/ajout_medecin.css">
+      <link rel="stylesheet" href="./css/all.css">
+    </head>
+    <body onload="hiddenajts();">
+      <!--loading-->
+      <script type="text/javascript">
+      window.addEventListener("load", function () {
+        const load = document.querySelector(".loading");
+        load.className += " hidden";
+
+      });
+      </script>
+
+      <div class="loading">
+      <div class="spinner">
+      <div class="double-bounce1"></div>
+      <div class="double-bounce2"></div>
+      </div>
+      </div>
+      <!--loading-->
+      <div class="container">
+      	<div class="form" style="height:AUto;">
+      	<div class="icon"><span><i class="fas fa-user-plus"></i></span></div>
+    <form action="../php/controleur/controleur_ajoutuser.php" method="post">
+    <table>
+
+
+    <tr><td>  <label for="">Votre Nom:</label>
+      <input type="text" name="nom" id=""></td></tr>
+
+
+    <tr><td>  <label for="">Votre Prenom :</label>
+      <input type="text" name="prenom" id=""></td></tr>
+
+    <tr>
+      <td>  <label for="">Votre Mot de Pass:</label>
+        <input type="password" name="pass" id="" style="    margin: auto; padding: 10px 19px 0; border: none;  outline: none; font-size: 17px; color: #202124;"></td>
+    </tr>
+
+    <tr>
+      <td>  <label for="">Veuillez choisir votre Fonction :</label>
+        <select name="Type" required style="    margin: auto; padding: 10px 19px 0; border: none;  outline: none; font-size: 17px; color: #202124;">
+        <option disabled selected> veuillez choisir votre Fonction </option>
+        <option value="directeur">Directeur</option>
+        <option value="agent">Agent</option>
+        <option value="medecin">Medecin</option>
+        </select></td>
+    </tr>
+
+
+    <tr>
+      <td>  <button type="submit" name="login"> Connexion </button>
+
+        <input type="reset" name="reset" value="Effacer"></td>
+    </tr>
+
+
+
+    </table>
+    </form>
+  </div>
+  </div>
+  </body>
+</html>

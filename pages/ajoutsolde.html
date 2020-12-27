@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="../css/loading.css">
+    <link rel="stylesheet" href="../css/ajout_medecin.css">
+      <link rel="stylesheet" href="./css/all.css">
+      <style media="screen">
+        td{
+          width: 350px;
+        }
+      </style>
+    </head>
+    <body onload="hiddenajts();">
+      <!--loading-->
+      <script type="text/javascript">
+      window.addEventListener("load", function () {
+        const load = document.querySelector(".loading");
+        load.className += " hidden";
+
+      });
+      </script>
+
+      <div class="loading">
+      <div class="spinner">
+      <div class="double-bounce1"></div>
+      <div class="double-bounce2"></div>
+      </div>
+      </div>
+      <!--loading-->
+      <div class="container">
+      	<div class="form" style="height:AUto; width:450px;">
+      	<div class="icon"><span><i class="fas fa-user-plus"></i></span></div>
+    <form action="../php/controleur/controleur_ajoutsolde.php" method="post">
+  <table>
+    <tr>
+      <td>  <label for="">Votre NSS:</label>
+        <input type="number" name="NSS" id=""></td>
+      </tr>
+      <tr>
+        <td><label for="">Le Montant que vous voulez ajouter ou modifier:</label>
+        <input type="number" name="montant" id=""></td>
+      </tr>
+      <tr>
+        <td><button type="submit" name="ok"> Valider</button>
+          <button type="reset" name="reset"> Effacer</button>
+      </td>
+      </tr>
+  </table>
+
+        </form>
+      </div>
+      </div>
+  </body>
+</html>

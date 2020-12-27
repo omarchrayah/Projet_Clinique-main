@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../css/Ajout_patient.css">
+    <link rel="stylesheet" href="../css/loading.css">
+    <title>Ajout Patient</title>
+  </head>
+  <body>
+    <!--loading-->
+    <script type="text/javascript">
+    window.addEventListener("load", function () {
+      const load = document.querySelector(".loading");
+      load.className += " hidden";
+
+    });
+    </script>
+
+    <div class="loading">
+    <div class="spinner">
+    <div class="double-bounce1"></div>
+    <div class="double-bounce2"></div>
+    </div>
+    </div>
+    <!--loading-->
+    <div class="container">
+    <div class="right"> <div class="img"></div> </div>
+    <div class="left">
+      <form class="" action="../php/controleur/control_ajout_patient.php" method="post">
+    <table>
+      <tr>
+        <td> <label for="Nom">Nom : </label> </td>
+        <td> <label for="Prenom">Prénom :</label> </td>
+
+       </tr>
+      <tr>
+        <td><input type="text" id="Nom" name="Nom" value="" autocomplete="off" required></td>
+        <td><input type="text" id="Prenom" name="Prenom" value="" autocomplete="off" required></td>
+
+       </tr>
+      <tr>
+        <td colspan="2"> <label for="Adresse">Adresse :</label> </td>
+
+       </tr>
+      <tr>
+        <td colspan="2"><input type="text" id="Adresse" name="Adresse" value="" autocomplete="off" style="width:95%"></td>
+
+       </tr>
+      <tr>
+        <td> <label for="Numtel">Numéro de Telephone :</label> </td>
+        <td> <label for="Date_de_Naissance">Date de naissance :</label> </td>
+
+       </tr>
+      <tr>
+        <td><input type="tel" pattern="[0-9]{3}-[0-9]{3}-[0-9]{3}" id="Numtel" name="Numtel" value="" placeholder="xxx-xxx-xxx" autocomplete="off"></td>
+        <td><input type="date" id="Date_de_Naissance" name="Date_de_Naissance" value="" autocomplete="off"></td>
+
+       </tr>
+      <tr>
+        <td> <label for="Departement_de_Naissance">Département de naissance :</label> </td>
+        <td> <label for="Pays" style="display:none;" id="labpays">Pays :</label> </td>
+
+       </tr>
+      <tr>
+        <td><input type="number"  min="1" max="99"  id="Departement_de_Naissance" name="Departement_de_Naissance" value="" autocomplete="off" onblur="dep_pays(this.value)" onchange="limiter_dep(this.value)"></td>
+        <td><input type="hidden" id="Pays" name="Pays" value="France" autocomplete="off" required></td>
+
+       </tr>
+      <tr>
+        <td colspan="2"> <label for="NSS">Numéro de sécurité sociale (NSS) :</label> </td>
+
+       </tr>
+      <tr>
+
+        <td colspan="2"><input type="number" min="1" id="NSS" name="NSS" value="" autocomplete="off" style="width:95%" required></td>
+
+       </tr>
+      <tr>
+        <td colspan="2" id="button"> <button type="submit" name="Ajouter" id="Ajouter">Ajouter</button></td>
+      </tr>
+    </table>
+  </form>
+    </div>
+    </div>
+
+
+<script type="text/javascript">
+function limiter_dep(value){
+  dep= document.getElementById('Departement_de_Naissance');
+  if (value>99) {
+  dep.value="99";
+
+  }
+}
+  function dep_pays(value){
+    input = document.getElementById('Pays');
+    label = document.getElementById('labpays');
+    if (value==99) {
+    input.type = "text";
+    input.value = "";
+    label.style.display="block";
+    }
+    else{
+      input.type = "hidden";
+      input.value = "France";
+      label.style.display="none";
+    }
+  }
+</script>
+
+  </body>
+</html>

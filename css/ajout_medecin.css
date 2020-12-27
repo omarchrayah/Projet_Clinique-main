@@ -1,0 +1,135 @@
+body {
+    height: 100vh;
+    width: 100%;
+}
+
+.container {
+    height: 100%;
+    width: 100%;
+    display: flex;
+}
+
+.form {
+    margin: auto;
+    height: 450px;
+    position: relative;
+    width: 350px;
+    border-radius: 8px;
+    box-shadow: 1px 5px 15px 4px #ddd;
+}
+
+.icon {
+    position: absolute;
+    height: 70px;
+    width: 70px;
+    border-radius: 35PX;
+    display: flex;
+    text-align: center;
+    background: linear-gradient(to right top, #00afcf, #00bed0, #00ccc7, #00d8b5, #00e39b);
+    top: -30px;
+    left: 130px;
+}
+
+span {
+    margin: auto;
+    color: #fff;
+    font-size: 20px;
+}
+
+form#form {
+    height: 100%;
+}
+
+table {
+    margin: 60px auto;
+    border-spacing: 24px;
+}
+
+td {
+    position: relative;
+    height: 58px;
+    width: 262px;
+    text-align: center;
+    border: 2px solid #1a84ed;
+    border-radius: 5px;
+    color: #202124;
+}
+
+input[type="text"] {
+    margin: auto;
+    padding: 10px 19px 0;
+    border: none;
+    outline: none;
+    font-size: 17px;
+    color: #202124;
+}
+input[type="password"] {
+    margin: auto;
+    padding: 10px 19px 0;
+    border: none;
+    outline: none;
+    font-size: 17px;
+    color: #202124;
+}
+input[type="date"] {
+    margin: auto;
+    padding: 10px 19px 0;
+    border: none;
+    outline: none;
+    font-size: 17px;
+    color: #202124;
+}
+input[type="number"] {
+    margin: auto;
+    padding: 10px 19px 0;
+    border: none;
+    outline: none;
+    font-size: 17px;
+    color: #202124;
+}
+
+label {
+    position: absolute;
+    top: 0;
+    left: 15px;
+    color: #1a84ed;
+  }
+
+button {
+    padding: 7px 15px;
+    border-radius: 5px;
+    border: none;
+    background: #287ae6;
+    font-size: 14px;
+    color: #fff;
+    cursor: pointer;
+    transition: .1s;
+    right: 0;
+}
+button#Ajouter {
+    right: 80px;
+}
+#Ajouter:hover{
+  box-shadow: 0 1px 1px 0 rgba(66,133,244,0.45), 0 1px 3px 1px rgba(66,133,244,0.3);
+}
+
+input[type="password"] {
+    margin: auto;
+    padding: 10px 19px 0;
+    border: none;
+    outline: none;
+    font-size: 17px;
+    color: #202124;
+}
+
+select {
+    margin: auto;
+    padding: 10px 19px 0;
+    border: none;
+    outline: none;
+    font-size: 17px;
+    color: #202124;
+}
+
+
+.ajoutValide {position: absolute;width: 150px;height: 35px;BACKGROUND: #000;border-radius: 20px;display: flex;top: 44px;left: 90px;background: #28CC14;box-shadow: 1px 1Px 4Px 0px #00e361;}

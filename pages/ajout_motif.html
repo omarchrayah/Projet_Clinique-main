@@ -1,0 +1,93 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" lang="fr">
+	<head>
+		<title>ajout motif </title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<link rel="stylesheet" href="../css/loading.css">
+		<link rel="stylesheet" href="../css/ajout_medecin.css">
+			<link rel="stylesheet" href="../css/all.css">
+    </head>
+    <body>
+			<!--loading-->
+			<script type="text/javascript">
+			window.addEventListener("load", function () {
+				const load = document.querySelector(".loading");
+				load.className += " hidden";
+
+			});
+			</script>
+
+			<div class="loading">
+			<div class="spinner">
+			<div class="double-bounce1"></div>
+			<div class="double-bounce2"></div>
+			</div>
+			</div>
+			<!--loading-->
+	<div class="container">
+	<div class="form" style="width:650px; height:auto;">
+	<div class="icon" style="left: 290px;"><span><i class="fas fa-clipboard"></i></span></div>
+
+
+			<form id="form" action="../php/controleur/controleur_motif.php"method="post">
+	<table>
+		<tr>
+			<td><label for="mtf" >nom motif : </label><input type="text" name="Nom_Motif" placeholder="entrer le nom de motif" required></td>
+			<td><label for="prx" name=''>prix motif</label><input type="text" name="Prix_Motif" placeholder="entrer le prix de motif" required/></td>
+		</tr>
+		<!-- <tr>
+			<td><input type="text" name="Nom_Motif" placeholder="entrer le nom de motif" required></td>
+			<td><input type="float" name="Prix_Motif" placeholder="entrer le prix de motif" required/></td>
+		</tr> -->
+		<tr>
+			<td><label for="lst" >liste de pieces </label><input  type="text" name="liste_pieces" placeholder="entrer les pieces a fournir" onblur="ajouter(this)" required></td>
+			<td><label for="cnsg" >les consignes : </label><input   type="text" name="consigne" placeholder="entrer les consignes"  onblur="ajout(this)" required></td>
+		</tr>
+
+		<tr>
+			<td id="contentp" style="display:none;"><div id="ajouter_pieces"></div></td>
+			<td id="contentc" style="display:none;"><div id="ajouter_consigne"></div></td>
+
+		</tr>
+		<tr>
+			<td style="border:none;" colspan="2"><button type="submit" name="ajout1">Ajouter</button>
+			<button type="reset" name="del" style="background:#5F7373;">Effacer</button></td>
+		</tr>
+	</table>
+
+			</form>
+		</div>
+		</div>
+			<script>
+			function ajouter(donnees_input_listepiece) {
+
+				document.getElementById('contentp').style.display="table-cell";
+
+				var liste_pieces =donnees_input_listepiece.value;
+
+				var contenu = "";
+
+				for (var i = 1; i<= liste_pieces ; i++){
+					contenu = contenu+'<input type="text" name = "liste_pieces'+i+'" placeholder="piece n' + i + '..." style="padding-bottom: 10px;" required/> ';
+				}
+				document.getElementById('ajouter_pieces').innerHTML = contenu;
+			}
+
+			function ajout(donnees_input_consigne) {
+				document.getElementById('contentc').style.display="table-cell";
+
+				var liste_consigne =donnees_input_consigne.value;
+
+				var cont = "";
+
+				for (var j = 1; j<= liste_consigne ; j++){
+					cont = cont+'<input type="text" name = "liste_consigne'+j+'" placeholder=" consigne n' + j + '..." style="padding-bottom: 10px;" required/> ';
+				}
+				document.getElementById('ajouter_consigne').innerHTML = cont;
+			}
+			</script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="../css/style_agent.css">
+  <title>Agent</title>
+</head>
+
+<body>
+<div class="container">
+
+
+
+<div class="left">
+<span>MENU <i id="i1"></i> <i id="i2"></i> <i id="i3"></i></span>
+  <div class="Menu">
+
+    <button class="tablinks" onclick="openCity(event, 'interface1');refresh('ajtp');" id="default">Medecin</button>
+    <button class="tablinks" onclick="openCity(event, 'interface2');refresh('MDC');">gestion medecin</button>
+    <button class="tablinks" onclick="openCity(event, 'interface3');refresh('log');">creer login</button>
+    <button class="tablinks" onclick="openCity(event, 'interface4');refresh('SNT');">ajouter MOtif</button>
+    <button class="tablinks" onclick="openCity(event, 'interface41');refresh('SNT1');">supression MOtif</button>
+  </div>
+  </div>
+  <div class="rignt">
+    <div class="top">
+      <div class="account"></div>
+    </div>
+    <div class="bottom">
+      <div class="pages" style="    padding-left: 75PX;">
+
+
+  <div id="interface1" class="clinique_interace">
+  <iframe src="../php/vue/Ajout_medecin.php" class="frams" id="ajtp"></iframe>
+
+  </div>
+
+  <div id="interface2" class="clinique_interace">
+      <iframe src="../php/controleur/controleur_afficher_medecin.php" class="frams" id="MDC"></iframe>
+
+  </div>
+
+  <div id="interface3" class="clinique_interace">
+    <iframe src="ajoutuser.html" class="frams" id="log"></iframe>
+
+  </div>
+  <div id="interface4" class="clinique_interace">
+      <iframe src="ajout_motif.html" class="frams" id="SNT"></iframe>
+
+  </div>
+  <div id="interface41" class="clinique_interace">
+      <iframe src="../php/controleur/controleur_affichermotif.php" class="frams" id="SNT1"></iframe>
+
+  </div>
+  </div>
+  </div>
+  </div>
+</div>
+
+
+
+
+
+  <script>
+    function openCity(evt, interface) {
+      var i, clinique_interace, tablinks;
+      clinique_interace = document.getElementsByClassName("clinique_interace");
+      for (i = 0; i < clinique_interace.length; i++) {
+        clinique_interace[i].style.display = "none";
+      }
+      tablinks = document.getElementsByClassName("tablinks");
+      for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+      }
+      document.getElementById(interface).style.display = "block";
+      evt.currentTarget.className += " active";
+    }
+    document.getElementById("default").click();
+  </script>
+
+
+  <script type="text/javascript">
+    function refresh(ID) {
+      var src = document.getElementById(ID).src;
+      document.getElementById(ID).src = '';
+      document.getElementById(ID).src = src;
+    }
+  </script>
+</body>
+
+</html>

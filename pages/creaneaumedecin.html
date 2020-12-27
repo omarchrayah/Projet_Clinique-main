@@ -1,0 +1,69 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" lang="fr">
+	<head>
+		<title>medecin</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<link rel="stylesheet" href="../css/loading.css">
+		<link rel="stylesheet" href="../css/ajout_medecin.css">
+			<link rel="stylesheet" href="../css/all.css">
+
+    </head>
+    <body>
+			<!--loading-->
+			<script type="text/javascript">
+			window.addEventListener("load", function () {
+				const load = document.querySelector(".loading");
+				load.className += " hidden";
+
+			});
+			</script>
+
+			<div class="loading">
+			<div class="spinner">
+			<div class="double-bounce1"></div>
+			<div class="double-bounce2"></div>
+			</div>
+			</div>
+			<!--loading-->
+
+			<div class="container">
+			<div class="form" style="width:650px; height:auto;">
+			<div class="icon" style="left: 290px;"><span><i class="fas fa-calendar-alt"></i></span></div>
+
+			<form id="form" action="../php/controleur/controleur_creneauxmedecin.php" method="post">
+				<table>
+					<tr>
+						<td><label >Nom Médecin :</label><input type="text" name="medecin" value="" placeholder="Veillez inserer le nom" required></td>
+						<td><label for="nbenf" name=''>nombre de creneaux :</label><input type="number" min="0" max="23" placeholder="N°" name="nbc" onblur="ajouter(this);" required /></td>
+					</tr>
+					<tr>
+						<td colspan="2"><div id="ajouter_creneaux"></div></td>
+					</tr>
+					<tr>
+						<td colspan="2" style="border:none;"><button type="submit" name="envoyer">envoi</button>
+							<button type="reset" name="del" style="background:#5F7373;">Efacer</button></td>
+					</tr>
+				</table>
+
+
+
+			</form>
+		</div>
+		</div>
+			<script>
+			function ajouter(donnees_input_medecin) {
+
+				var nombre_creneaux =donnees_input_medecin.value;
+
+				var contenu = "";
+
+				for (var i = 1; i<= nombre_creneaux ; i++){
+					contenu = contenu+'<input type="date" name = "creneau_medecin_donnee_'+i+'" style="padding-bottom: 10px;" required/><input type="number"  name= "DE_'+i+'" min="0" max="23" style="padding-bottom: 10px;" placeholder="De.." required/><input  type="number" name="A_'+i+'" min="0" max="23" style="padding-bottom: 10px;" placeholder="A.." required /><br/>';
+				}
+				document.getElementById('ajouter_creneaux').innerHTML = contenu;
+			}
+			</script>
+
+
+	</body>
+</html>

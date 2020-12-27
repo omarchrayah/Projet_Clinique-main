@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="../css/style_agent.css">
+  <title>Agent</title>
+</head>
+
+<body>
+<div class="container">
+
+
+
+<div class="left">
+<span>MENU <i id="i1"></i> <i id="i2"></i> <i id="i3"></i></span>
+  <div class="Menu">
+
+    <button class="tablinks" onclick="openCity(event, 'interface1');refresh('ajtp');" id="default">Creneaux</button>
+  </div>
+  </div>
+  <div class="rignt">
+    <div class="top">
+      <div class="account"></div>
+    </div>
+    <div class="bottom">
+      <div class="pages">
+
+
+  <div id="interface1" class="clinique_interace">
+  <iframe src="creaneaumedecin.html" class="frams" id="ajtp"></iframe>
+
+  </div>
+
+
+  </div>
+  </div>
+  </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+  <script>
+    function openCity(evt, interface) {
+      var i, clinique_interace, tablinks;
+      clinique_interace = document.getElementsByClassName("clinique_interace");
+      for (i = 0; i < clinique_interace.length; i++) {
+        clinique_interace[i].style.display = "none";
+      }
+      tablinks = document.getElementsByClassName("tablinks");
+      for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+      }
+      document.getElementById(interface).style.display = "block";
+      evt.currentTarget.className += " active";
+    }
+    document.getElementById("default").click();
+  </script>
+
+
+  <script type="text/javascript">
+    function refresh(ID) {
+      var src = document.getElementById(ID).src;
+      document.getElementById(ID).src = '';
+      document.getElementById(ID).src = src;
+    }
+  </script>
+</body>
+
+</html>

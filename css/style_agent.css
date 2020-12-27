@@ -1,0 +1,132 @@
+@import url('https://fonts.googleapis.com/css?family=Reem+Kufi&display=swap');
+body{
+  padding: 0;
+  margin: 0;
+  font-family: 'Reem Kufi', sans-serif;
+  height: 100vh;
+}
+.container{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+
+}
+.left{
+  width: 22%;
+  background: #123;
+  background: transparent linear-gradient(198deg, #0DF5C5 0%, #1181D6 100%) 0% 0% no-repeat padding-box;
+  border-radius: 0px 120px 120px 0px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+.right{
+
+}
+.Menu{
+
+margin: auto;
+
+display: flex;
+
+flex-direction: column;
+}
+.Menu button{
+  padding: 3px 53px;
+  margin: 25px;
+  font-family: 'Reem Kufi', sans-serif;
+  font-size: 16px;
+  background: none;
+  border: none;
+  text-align: left;
+  position: relative;
+  color: #FFFFFfE6;
+  outline: none;
+  cursor: pointer;
+}
+.Menu button::after{
+  content: '';
+  background: #fff;
+  height: 6px;
+  width: 6px;
+  border-radius: 5px;
+  position: absolute;
+  top: 18px;
+  left: 18px;
+}
+
+span {
+    /* margin: auto; */
+    position: absolute;
+    right: 100px;
+    top: 70px;
+    font-size: 20px;
+    color: #fff;
+}
+
+i {
+    width: 50px;
+    height: 3px;
+    background: #fff;
+    position: absolute;
+    left: 55px;
+    border-radius: 7px;
+    margin: 8px 20px;
+}
+#i1{
+
+width: 40px;
+
+left: 65px;
+}
+#i2{
+    top: 13px;
+}
+#i3{
+    top: 25px;
+    width: 30px;
+    left: 74px;
+}
+
+.rignt {
+    display: flex;
+    flex-direction: column;
+    width: 81%;
+    margin-left: -40px;
+}
+
+.top {
+    height: 55px;
+    background: #fff;
+    border-bottom: 10px solid #eee;
+    position: relative;
+    z-index: -999;
+}
+
+.account {
+    position: absolute;
+    right: 10px;
+    top: 5px;
+    height: 40px;
+    width: 40px;
+    border: 1px solid #999;
+    border-radius: 30px;
+    outline: none;
+}
+
+.bottom {
+    height: 90%;
+}
+
+.pages {
+    height: 25%;
+    padding-left: 25px;
+}
+.frams {
+      width: 100%;
+      height: 85vh;
+      border: none;
+      overflow-y: scroll;
+
+    }
